@@ -81,7 +81,6 @@ main() {
 
     # Data is stored in 001
     REF_PROJECT=project-FjXxBx00P1B2ZJ0Q9KvXX84j
-    dx ls $REF_PROJECT
 
     CACHE_FILE=file-FjZ9BG00P1BKyVb7BZVzG26b
     REFERENCES_FILE=file-FjZ8Kq00P1B2Yp2ZKg4Z2q55
