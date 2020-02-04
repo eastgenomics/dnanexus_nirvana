@@ -4,7 +4,7 @@
   "summary": "dnanexus_nirvana_2.0.3",
   "tags:": ["Annotation"],
   "properties": {
-    "github release": "None"
+    "github release": "v1.0.0"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
@@ -14,9 +14,7 @@
       "help": "A VCF file containing variants to be annotated",
       "class": "file",
       "optional": false,
-      "patterns": [
-        "*.refseq_nirvana_203.vcf"
-      ],
+      "patterns": ["*.refseq_nirvana_203.vcf"]
     }
   ],
   "outputSpec": [
@@ -25,10 +23,7 @@
       "label": "Output JSON.gz file",
       "help": "A JSON.gz file containing a structured JSON representation of all annotation and sample information",
       "class": "file",
-      "patterns": [
-        "*.json.gz"
-      ],
-      "help": ""
+      "patterns": ["*.json.gz"]
     }
   ],
   "runSpec": {
