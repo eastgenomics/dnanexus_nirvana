@@ -1,7 +1,7 @@
 {
-  "name": "dnanexus_nirvana_2.0.3",
-  "title": "dnanexus_nirvana_2.0.3",
-  "summary": "dnanexus_nirvana_2.0.3",
+  "name": "eggd_nirvana_v2.0.3",
+  "title": "eggd_nirvana_v2.0.3",
+  "summary": "eggd_nirvana_v2.0.3",
   "tags:": ["Annotation"],
   "properties": {
     "github release": "v1.0.0"
@@ -35,7 +35,7 @@
     "interpreter": "bash",
     "release": "16.04",
     "distribution": "Ubuntu",
-    "file": "src/dnanexus_nirvana_2.0.3.sh"
+    "file": "src/eggd_nirvana_v2.0.3.sh"
   },
     "access": {
     "project": "CONTRIBUTE",
@@ -45,7 +45,7 @@
     ]
   },
   "regionalOptions": {
-    "aws:aws:eu-central-1": {
+    "aws:eu-central-1": {
       "systemRequirements": {
         "*": {
           "instanceType": "mem1_ssd1_v2_x4"
