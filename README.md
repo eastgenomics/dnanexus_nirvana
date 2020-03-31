@@ -20,9 +20,8 @@ The app outputs a compressed JSON file (where [outPrefix] is the vcf filename wi
 
 [outPrefix].json.gz - structured JSON representation of all annotation and sample information as extracted from the VCF
 
-
 ## How does this app work?
-The app runs verifyBamID using an input BAM file and uploads the outputs to DNAnexus.
+The app runs Nirvana using an input vcf file and uploads the output to DNAnexus.
 
 ## What are the limitations of this app
 Where insertion/deletion differences exist betweeen a RefSeq transcript and the reference genome sequences, Nirvana 2.0.3 generates incorrect HGVS nomenclature for variants downstream of those differences.
