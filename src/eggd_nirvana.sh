@@ -80,11 +80,11 @@ main() {
     echo "Building annotation data"
 
     # Data is stored in 001
-    REF_PROJECT=project-Fjj60Qj4yBGvQXbb5Z6FXkgF
+    REF_PROJECT=project-Fkb6Gkj433GVVvj73J7x8KbV
 
-    CACHE_FILE=file-Fk3880Q4yBGxxPZy6pjxv31J
-    REFERENCES_FILE=file-Fk390F84yBGYpKQ2BGgjB6jV
-    SUPP_DATABASE_FILE_GRCH37=file-Fk38G0Q4yBGpv1870Fk4XBFq
+    CACHE_FILE=file-Fp2BK58433GXbKY22Q9PqGyP
+    REFERENCES_FILE=file-Fp2BK60433GvjKkb706Xf3ZV
+    SUPP_DATABASE_FILE_GRCH37=file-Fp2BK5j433GX63zQGpjF3jXG
 
     # Download data
     NIRVANA_DATA_DIR=$NIRVANA_ROOT/Data

@@ -1,10 +1,10 @@
 {
-  "name": "eggd_nirvana_v1.0.0",
-  "title": "eggd_nirvana_v1.0.0",
+  "name": "eggd_nirvana_v1.0.1",
+  "title": "eggd_nirvana_v1.0.1",
   "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v2.0.3)",
   "tags:": ["Annotation"],
   "properties": {
-    "github release": "v1.0.0"
+    "github release": "v1.0.1"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
