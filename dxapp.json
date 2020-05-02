@@ -1,7 +1,7 @@
 {
   "name": "eggd_nirvana_v2.0.0",
   "title": "eggd_nirvana_v2.0.0",
-  "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v3.2.2)",
+  "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v3.5.0)",
   "tags:": ["Annotation"],
   "properties": {
     "github release": "v1.0.1"

@@ -68,7 +68,7 @@ main() {
     # Build Nirvana
     TOP_DIR=$(pwd)
     NIRVANA_ROOT=$TOP_DIR/Nirvana-3.5.0
-    NIRVANA_BIN=$NIRVANA_ROOT/bin/Release/netcoreapp2.0/Nirvana.dll
+    NIRVANA_BIN=$NIRVANA_ROOT/bin/Release/netcoreapp2.1/Nirvana.dll
 
     cd $NIRVANA_ROOT
     dotnet build -c Release
@@ -82,9 +82,9 @@ main() {
     # Data is stored in 001
     REF_PROJECT=project-Fkb6Gkj433GVVvj73J7x8KbV
 
-    CACHE_FILE=file-Fp2BK58433GXbKY22Q9PqGyP
-    REFERENCES_FILE=file-Fp2BK60433GvjKkb706Xf3ZV
-    SUPP_DATABASE_FILE_GRCH37=file-Fp2BK5j433GX63zQGpjF3jXG
+    CACHE_FILE=file-Fpfg1G04gGqKGQ1vGyf12pY7
+    REFERENCES_FILE=file-Fpffzvj4gGq66j418g4fKqG9
+    SUPP_DATABASE_FILE_GRCH37=file-FpfgBX84gGq47j4Q1f4Bv7kP
 
     # Download data
     NIRVANA_DATA_DIR=$NIRVANA_ROOT/Data
@@ -97,15 +97,15 @@ main() {
 
     # Unpack it to the expected dirs
     echo "Unpacking data"
-    NIRVANA_CACHE_DIR=$NIRVANA_DATA_DIR/Cache/24/GRCh37
-    NIRVANA_REF_DIR=$NIRVANA_DATA_DIR/References/5
-    NIRVANA_SUPP_DIR=$NIRVANA_DATA_DIR/SupplementaryDatabase/41
+    NIRVANA_CACHE_DIR=$NIRVANA_DATA_DIR/Cache/GRCh37
+    NIRVANA_REF_DIR=$NIRVANA_DATA_DIR/References
+    NIRVANA_SUPP_DIR=$NIRVANA_DATA_DIR/SupplementaryAnnotation/GRCh37
 
     mkdir -p $NIRVANA_CACHE_DIR $NIRVANA_REF_DIR $NIRVANA_SUPP_DIR
 
-    tar xzf $NIRVANA_DATA_DIR/v24.tar.gz -C $NIRVANA_DATA_DIR
-    tar xzf $NIRVANA_DATA_DIR/v5.tar.gz -C $NIRVANA_DATA_DIR
-    tar xzf $NIRVANA_DATA_DIR/v41_GRCh37.tar.gz -C $NIRVANA_SUPP_DIR  # This tar doesn't contain parent dirs, other two do
+    tar xf $NIRVANA_DATA_DIR/cache.tar -C $NIRVANA_DATA_DIR
+    tar xf $NIRVANA_DATA_DIR/references.tar -C $NIRVANA_DATA_DIR
+    tar xf $NIRVANA_DATA_DIR/supplementary.tar -C $NIRVANA_DATA_DIR
     
     echo "Done building annotation data"
     
@@ -123,9 +123,9 @@ main() {
 
     # Set reference genome and build links to data resources
     REFERENCE_BUILD=GRCh37
-    NIRVANA_CACHE=$NIRVANA_DATA_DIR/Cache/24/$REFERENCE_BUILD/Both84  # Numbers here will need to be tweaked if Nirvana version changes
-    NIRVANA_SUPP=$NIRVANA_DATA_DIR/SupplementaryDatabase/41/$REFERENCE_BUILD
-    NIRVANA_REF=$NIRVANA_DATA_DIR/References/5/Homo_sapiens.$REFERENCE_BUILD.Nirvana.dat
+    NIRVANA_CACHE=$NIRVANA_DATA_DIR/Cache/$REFERENCE_BUILD/Both  # Numbers here will need to be tweaked if Nirvana version changes
+    NIRVANA_SUPP=$NIRVANA_DATA_DIR/SupplementaryAnnotation/$REFERENCE_BUILD
+    NIRVANA_REF=$NIRVANA_DATA_DIR/References/Homo_sapiens.$REFERENCE_BUILD.Nirvana.dat
 
     command="dotnet $NIRVANA_BIN --cache $NIRVANA_CACHE --sd $NIRVANA_SUPP --ref $NIRVANA_REF --in $input_vcf_name --out $input_vcf_prefix"
     echo -e $command
