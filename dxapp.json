@@ -1,7 +1,7 @@
 {
-  "name": "eggd_nirvana_v1.0.1",
-  "title": "eggd_nirvana_v1.0.1",
-  "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v2.0.3)",
+  "name": "eggd_nirvana_v2.0.0",
+  "title": "eggd_nirvana_v2.0.0",
+  "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v3.2.2)",
   "tags:": ["Annotation"],
   "properties": {
     "github release": "v1.0.1"
@@ -35,7 +35,7 @@
     "interpreter": "bash",
     "release": "16.04",
     "distribution": "Ubuntu",
-    "file": "src/eggd_nirvana.sh"
+    "file": "src/eggd_nirvana_3.5.0.sh"
   },
     "access": {
     "project": "CONTRIBUTE",
