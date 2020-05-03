@@ -4,7 +4,7 @@
   "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v3.5.0)",
   "tags:": ["Annotation"],
   "properties": {
-    "github release": "v1.0.1"
+    "github release": "v2.0.0"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
@@ -35,7 +35,7 @@
     "interpreter": "bash",
     "release": "16.04",
     "distribution": "Ubuntu",
-    "file": "src/eggd_nirvana_3.5.0.sh"
+    "file": "src/eggd_nirvana_v2.0.10.sh"
   },
     "access": {
     "project": "CONTRIBUTE",
