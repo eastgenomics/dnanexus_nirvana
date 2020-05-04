@@ -4,10 +4,10 @@ For more information about how to run or modify it, see
 https://documentation.dnanexus.com/.
 <!-- /dx-header -->
 
-# dnanexus_nirvana_2.0.3 (https://github.com/Illumina/Nirvana/releases/tag/v2.0.3)
+# dnanexus_nirvana_2.0.10 (https://github.com/Illumina/Nirvana/releases/tag/v2.0.10)
 
 ## What does this app do?
-This app runs Illumina's Nirvana 2.0.3 to annotate variants.
+This app runs Illumina's Nirvana 2.0.10 to annotate variants.
 
 Nirvana provides clinical-grade annotation of genomic variants (SNVs, MNVs, insertions, deletions, indels, and SVs (including CNVs). It can be run as a stand-alone package or integrated into larger software tools that require variant annotation.
 
@@ -28,10 +28,9 @@ The app outputs one file, where [outPrefix] is the vcf filename without extensio
 1. [outPrefix].json.gz - Annotation for variants present within the input vcf (gzipped json file)
 
 ## How does this app work?
-The app runs Nirvana 2.0.3 using an input VCF file and uploads the output to DNAnexus.
+The app runs Nirvana 2.0.10 using an input VCF file and uploads the output to DNAnexus.
 
 ## What are the limitations of this app
-- Only features present in the annotation data will be annotated against variants. i.e. if a transcript is not present within the annotation data then it will be absent from the annotation of variants within that transcripts
-- This version (2.0.3) of Nirvana is outdated, and contains known bugs including incorrect HGVS annotation of variants downstream of differences between the reference genome and the transcript sequence.
+- Only features present in the annotation data will be annotated against variants. i.e. if a transcript is not present within the annotation data then it will be absent from the annotation of variants within that transcript
 
 ## This app was made by EMEE GLH
