@@ -1,7 +1,7 @@
 {
-  "name": "eggd_nirvana_v2.0.0",
-  "title": "eggd_nirvana_v2.0.0",
-  "summary": "eggd_nirvana - Annotation using Illumina's Nirvana (v3.5.0)",
+  "name": "nirvana_v2.0.0",
+  "title": "nirvana_v2.0.0",
+  "summary": "Annotation using Illumina's Nirvana (v3.5.0)",
   "tags:": ["Annotation"],
   "properties": {
     "github release": "v2.0.0"
@@ -29,7 +29,7 @@
   "runSpec": {
     "timeoutPolicy": {
       "*": {
-        "hours": 48
+        "hours": 1
       }
     },
     "interpreter": "bash",
