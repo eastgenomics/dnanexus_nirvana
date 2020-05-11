@@ -1,7 +1,7 @@
 {
   "name": "nirvana_v2.0.0",
   "title": "nirvana_v2.0.0",
-  "summary": "Annotation using Illumina's Nirvana (v3.5.0)",
+  "summary": "Annotation using Illumina's Nirvana (v2.0.10)",
   "tags:": ["Annotation"],
   "properties": {
     "github release": "v2.0.0"
