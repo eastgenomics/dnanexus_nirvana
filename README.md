@@ -1,9 +1,9 @@
 # eggd_nirvana
 
-Based on https://github.com/Illumina/Nirvana/releases/tag/v2.0.3
+Based on https://github.com/Illumina/Nirvana/releases/tag/v2.0.10
 
 ## What does this app do?
-This app runs Nirvana (v2.0.3) to annotate variants.
+This app runs Nirvana (v2.0.10) to annotate variants.
 
 Nirvana provides clinical-grade annotation of genomic variants (SNVs, MNVs, insertions, deletions, indels, and SVs (including CNVs). It can be run as a stand-alone package or integrated into larger software tools that require variant annotation.
 

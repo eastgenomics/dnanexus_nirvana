@@ -1,5 +1,5 @@
 #!/bin/bash -x
-# eggd_nirvana_2.0.10 0.0.1
+# eggd_nirvana_2.0.0 0.0.1
 #
 # Basic execution pattern: Your app will run on a single machine from
 # beginning to end.
