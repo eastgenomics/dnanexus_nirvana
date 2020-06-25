@@ -1,5 +1,5 @@
 #!/bin/bash -x
-# eggd_nirvana_2.0.0 0.0.1
+# eggd_nirvana_2.0.1 0.0.1
 #
 # Basic execution pattern: Your app will run on a single machine from
 # beginning to end.
@@ -28,29 +28,12 @@ main() {
     # It's configured to only allow access to the stock Ubuntu repos.
     sudo rm -f /etc/apt/apt.conf.d/99dnanexus
 
-    # Set up access to the external APT repository.
     echo "Setting up dotnet"
-    wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
 
-    # Update and install the .NET Core SDK. 
-    # install -y avoids y/n prompt
-    sudo apt-get update
-    sudo apt-get install -y apt-transport-https
-    sudo apt-get update
-    sudo apt-get install -y dotnet-sdk-2.2
-
-    # Update and install the ASP.NET Core runtime
-    sudo apt-get update
-    sudo apt-get install apt-transport-https
-    sudo apt-get update
-    sudo apt-get install aspnetcore-runtime-2.2
-
-    # Update and install the .NET Core runtime
-    sudo apt-get update
-    sudo apt-get install apt-transport-https
-    sudo apt-get update
-    sudo apt-get install dotnet-runtime-2.2
+    dx download project-Fkb6Gkj433GVVvj73J7x8KbV:file-Fqp7bB8433Gb8YZKPyf9X00k
+    mkdir -p "$HOME/dotnet" && tar zxf dotnet-sdk-2.2.207-linux-x64.tar.gz -C "$HOME/dotnet"
+    export DOTNET_ROOT=$HOME/dotnet
+    export PATH=$PATH:$HOME/dotnet
 
     # No, I do not want Microsoft looking over my shoulder
     DOTNET_CLI_TELEMETRY_OPTOUT=1
