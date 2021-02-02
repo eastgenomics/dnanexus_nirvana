@@ -66,7 +66,34 @@ main() {
 
     CACHE_FILE=file-Fpg96204gGq4x83kBzp2Yj5G
     REFERENCES_FILE=file-Fp2BK60433GvjKkb706Xf3ZV
-    SUPP_DATABASE_FILE_GRCH37=file-Fpg96PQ4gGq31b9Y28j4qFkj
+    #SUPP_DATABASE_FILE_GRCH37=file-Fpg96PQ4gGq31b9Y28j4qFkj
+    #SUPP_DATABASE_FILE_GRCH38=file-G0G4gQ8433GqFK3k1fgJ4GKq
+
+    # Download input vcf
+    dx download "$input_vcf"
+
+    echo "Value of input_vcf: '$input_vcf'"
+    
+    # Determine genome build of input vcf
+    # Find reference line in vcf header and extract reference genome filename from that line
+    vcf_ref_genome=$(zcat ${input_vcf_name} | grep ^##reference | grep  -o '[^/]*$')
+    echo "Reference genome file: $vcf_ref_genome"
+
+    # Find build number in reference filename
+    # Contains 37 and does not contain 38 -> build is 37
+    if [[ $vcf_ref_genome == *"37"* ]] && [[ $vcf_ref_genome != *"38"* ]]; then
+        ref_genome="37"
+        SUPP_DATABASE_FILE=file-Fpg96PQ4gGq31b9Y28j4qFkj
+    # Contains 38 and does not contain 37 -> build is 38
+    elif [[ $vcf_ref_genome == *"38"* ]] && [[ $vcf_ref_genome != *"37"* ]]; then
+        ref_genome="38"
+        SUPP_DATABASE_FILE=file-G0G4gQ8433GqFK3k1fgJ4GKq
+    # Unknown/ambiguous
+    else
+        echo "Unable to unambiguously determine reference genome (37/38) from input vcf header"
+    fi
+    
+    echo "Input vcf reference build: ${ref_genome}"
 
     # Download data
     NIRVANA_DATA_DIR=$NIRVANA_ROOT/Data
@@ -75,7 +102,7 @@ main() {
     echo "Downloading data"
     dx download $REF_PROJECT:$CACHE_FILE -o $NIRVANA_DATA_DIR
     dx download $REF_PROJECT:$REFERENCES_FILE -o $NIRVANA_DATA_DIR
-    dx download $REF_PROJECT:$SUPP_DATABASE_FILE_GRCH37 -o $NIRVANA_DATA_DIR
+    dx download $REF_PROJECT:$SUPP_DATABASE_FILE -o $NIRVANA_DATA_DIR
 
     # Unpack it to the expected dirs
     echo "Unpacking data"
@@ -87,24 +114,15 @@ main() {
 
     tar xzf $NIRVANA_DATA_DIR/v26.tar.gz -C $NIRVANA_DATA_DIR
     tar xzf $NIRVANA_DATA_DIR/v5.tar.gz  -C $NIRVANA_DATA_DIR
-    tar xzf $NIRVANA_DATA_DIR/v44_GRCh37.tar.gz -C $NIRVANA_SUPP_DIR
+    tar xzf $NIRVANA_DATA_DIR/v44_GRCh3*.tar.gz -C $NIRVANA_SUPP_DIR
     
     echo "Done building annotation data"
-    
 
-    echo "Value of input_vcf: '$input_vcf'"
-
-    # The following line(s) use the dx command-line tool to download your file
-    # inputs to the local file system using variable names for the filenames. To
-    # recover the original filenames, you can use the output of "dx describe
-    # "$variable" --name".
-
-    dx download "$input_vcf"     
 
     # Running Nirvana
 
     # Set reference genome and build links to data resources
-    REFERENCE_BUILD=GRCh37
+    REFERENCE_BUILD=GRCh${ref_genome}
     NIRVANA_CACHE=$NIRVANA_DATA_DIR/Cache/26/$REFERENCE_BUILD/Both  # Numbers here will need to be tweaked if Nirvana version changes
     NIRVANA_SUPP=$NIRVANA_DATA_DIR/SupplementaryAnnotation/$REFERENCE_BUILD
     NIRVANA_REF=$NIRVANA_DATA_DIR/References/5/Homo_sapiens.$REFERENCE_BUILD.Nirvana.dat
