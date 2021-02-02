@@ -84,7 +84,7 @@ main() {
     if [[ $vcf_ref_genome == *"37"* ]] && [[ $vcf_ref_genome != *"38"* ]]; then
         ref_genome="37"
         SUPP_DATABASE_FILE=file-Fpg96PQ4gGq31b9Y28j4qFkj
-    # Contains 38 and does not contain 38 -> build is 37
+    # Contains 38 and does not contain 37 -> build is 38
     elif [[ $vcf_ref_genome == *"38"* ]] && [[ $vcf_ref_genome != *"37"* ]]; then
         ref_genome="38"
         SUPP_DATABASE_FILE=file-G0G4gQ8433GqFK3k1fgJ4GKq
@@ -103,7 +103,6 @@ main() {
     dx download $REF_PROJECT:$CACHE_FILE -o $NIRVANA_DATA_DIR
     dx download $REF_PROJECT:$REFERENCES_FILE -o $NIRVANA_DATA_DIR
     dx download $REF_PROJECT:$SUPP_DATABASE_FILE -o $NIRVANA_DATA_DIR
-    #dx download $REF_PROJECT:$SUPP_DATABASE_FILE_GRCH${ref_genome} -o $NIRVANA_DATA_DIR
 
     # Unpack it to the expected dirs
     echo "Unpacking data"
